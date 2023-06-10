@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6010ca35f9198bf4c83a3ca74a647e2f, type: 3}
-  m_Name: 1 2
+  m_Name: Beach
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 7e6eee04c8ebae549ad3596012be9531, type: 3}
-  mainText: 3
-  subText: 12
+  image: {fileID: 21300000, guid: f48c953ac61ce664eacf46d1c83579ba, type: 3}
+  mainText: Beach
+  subText: Relax by the sea

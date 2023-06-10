@@ -6,16 +6,20 @@ public class ManyImagesTemplate : MonoBehaviour, ITemplateHolder
 	[SerializeField] private GameObject templatesContainer;
 	[SerializeField] private UITemplate template;
 
-	[SerializeField] private ManyImagesTemplateSO manyImagesSO;
+	[SerializeField] private ManyImagesSO manyImagesSO;
 
 	public void UpdateVisual()
 	{
 		if (templatesContainer != null)
 		{
-			if (manyImagesSO.Templates.Count == 0)
+			if (manyImagesSO.TemplatesSOList.Count == 0)
 			{
-				Destroy(gameObject);
+				gameObject.SetActive(false);
 				return;
+			}
+			else
+			{
+				gameObject.SetActive(true);
 			}
 
 			foreach (Transform child in templatesContainer.transform)
@@ -23,7 +27,7 @@ public class ManyImagesTemplate : MonoBehaviour, ITemplateHolder
 				Destroy(child.gameObject);
 			}
 
-			foreach (TemplateSO miniTemplate in manyImagesSO.Templates)
+			foreach (TemplateSO miniTemplate in manyImagesSO.TemplatesSOList)
 			{
 				UITemplate newTemplate = Instantiate(template, templatesContainer.transform);
 				newTemplate.UpdateVisual(miniTemplate.Image, miniTemplate.MainText, miniTemplate.SubText);
@@ -33,6 +37,6 @@ public class ManyImagesTemplate : MonoBehaviour, ITemplateHolder
 
 	public void SetTempate(ITemplate template)
 	{
-		manyImagesSO = template as ManyImagesTemplateSO;
+		manyImagesSO = template as ManyImagesSO;
 	}
 }

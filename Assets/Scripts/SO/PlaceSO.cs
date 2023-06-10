@@ -1,8 +1,7 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Sites/Place", fileName = "Place")]
-public class PlaceSiteSO : ScriptableObject, ITemplate
+public class PlaceSO : ScriptableObject, ITemplate
 {
 	[SerializeField] private Sprite mainImage;
 
@@ -11,7 +10,7 @@ public class PlaceSiteSO : ScriptableObject, ITemplate
 	[SerializeField, Range(0f, 5f)] private float raiting;
 	[SerializeField] private float cost;
 
-	[SerializeField] private List<Sprite> additingImages;
+	[SerializeField] private ManyImagesSO additionalInformation;
 
 	[SerializeField, TextArea()] private string detail;
 	[SerializeField, TextArea()] private string description;
@@ -22,7 +21,7 @@ public class PlaceSiteSO : ScriptableObject, ITemplate
 	public string Title { get => title; private set => title = value; }
 	public string Location { get => location; private set => location = value; }
 	public float Raiting { get => raiting; private set => raiting = value; }
-	public List<Sprite> AdditingImages { get => additingImages; private set => additingImages = value; }
+	public ManyImagesSO AdditionalInformation { get => additionalInformation; private set => additionalInformation = value; }
 	public string Detail { get => detail; private set => detail = value; }
 	public string Description { get => description; private set => description = value; }
 	public float Cost { get => cost; set => cost = value; }

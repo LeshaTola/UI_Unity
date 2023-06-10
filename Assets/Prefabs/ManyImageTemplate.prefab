@@ -1884,8 +1884,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   templatesContainer: {fileID: 989819950884030317}
-  template: {fileID: -4426573991737369243, guid: 56405ec0a4373f540b61549959d8b9b1, type: 3}
-  manyImagesSO: {fileID: 0}
+  template: {fileID: -4426573991737369243, guid: afc436e1ff4965b4fac47dd3440635fd, type: 3}
+  manyImagesSO: {fileID: 11400000, guid: 3bc6f1876186e214fb1601cd61eb78e2, type: 2}
 --- !u!1 &989819951696330153
 GameObject:
   m_ObjectHideFlags: 0

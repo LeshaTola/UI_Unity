@@ -12,19 +12,23 @@ public class PlaceUI : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI detail;
 	[SerializeField] private TextMeshProUGUI description;
 	[SerializeField] private TextMeshProUGUI costText;
+	[SerializeField] private Button ExitButton;
 
 
 	[Header("AdditingImages params")]
-	[SerializeField] private GameObject additingImagesContainerDeleter;
-	[SerializeField] private GameObject additingImagesContainer;
-	[SerializeField] private GameObject additingImagesTemplate;
+	[SerializeField] private ManyImagesTemplate manyImagesTemplate;
 
 	[Header("Place")]
-	[SerializeField] private PlaceSiteSO place;
+	[SerializeField] private PlaceSO place;
 
 	private void Awake()
 	{
 		UpdateUI();
+		ExitButton.onClick.AddListener(() =>
+		{
+			//Hide();
+			Destroy(gameObject);
+		});
 	}
 
 	public void UpdateUI()
@@ -36,27 +40,24 @@ public class PlaceUI : MonoBehaviour
 		detail.text = place.Detail;
 		description.text = place.Description;
 		costText.text = "$" + place.Cost + "/night";
-		UpdateAdditingImageContainer();
+		manyImagesTemplate.SetTempate(place.AdditionalInformation);
+		manyImagesTemplate.UpdateVisual();
 	}
 
-	private void UpdateAdditingImageContainer()
+
+	public void Show()
 	{
-		if (additingImagesContainer != null)
-		{
-			if (place.AdditingImages.Count == 0)
-			{
-				Destroy(additingImagesContainerDeleter);
-				return;
-			}
-			foreach (Transform child in additingImagesContainer.transform)
-			{
-				Destroy(child.gameObject);
-			}
-			foreach (Sprite image in place.AdditingImages)
-			{
-				GameObject newTemplate = Instantiate(additingImagesTemplate, additingImagesContainer.transform);
-				newTemplate.GetComponent<UITemplate>().UpdateVisual(image, " ", " ");
-			}
-		}
+		gameObject.SetActive(true);
+	}
+
+	public void Hide()
+	{
+		gameObject.SetActive(false);
+	}
+
+	public void SetPlaceSO(PlaceSO placeSO)
+	{
+		place = placeSO;
+		UpdateUI();
 	}
 }
