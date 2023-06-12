@@ -17,7 +17,7 @@ MonoBehaviour:
   location: Russia
   raiting: 4.5
   cost: 120
-  additionalInformation: {fileID: 0}
+  additionalInformation: {fileID: 11400000, guid: a2658871186bf114eaf24e8ad90c36c1, type: 2}
   detail: 'Length: 120 km'
   description: "Description: \u043Ene of the most beautiful roads in Russia"
   imageTemplate: {fileID: 7844059623239288499, guid: 3f218af6a18140f4289cadc447221254, type: 3}

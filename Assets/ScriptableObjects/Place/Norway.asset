@@ -17,7 +17,7 @@ MonoBehaviour:
   location: Norwey
   raiting: 4.7
   cost: 300
-  additionalInformation: {fileID: 11400000, guid: a2658871186bf114eaf24e8ad90c36c1, type: 2}
+  additionalInformation: {fileID: 11400000, guid: 7c351f3931513ff45a00e1926b11b75f, type: 2}
   detail: 4 Bedrooms, Kitchen, 2 Bathroom and swimming pool
   description: 'Description: Cozy house on the edge of a Norwegian village with a
     beautiful view of the mountains'

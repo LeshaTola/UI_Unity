@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class JustImageTemplate : MonoBehaviour, ITemplateHolder
 {
 	[SerializeField] private Image image;
+	[SerializeField] private GameObject modelParent;
 	[SerializeField] private TextMeshProUGUI mainText;
 	[SerializeField] private TextMeshProUGUI subText;
 
@@ -31,6 +32,14 @@ public class JustImageTemplate : MonoBehaviour, ITemplateHolder
 		if (place != null)
 		{
 			image.sprite = place.MainImage;
+			if (place.Model != null)
+			{
+				Instantiate(place.Model, modelParent.transform);
+			}
+			else
+			{
+				Destroy(modelParent);
+			}
 			mainText.text = place.Title;
 			subText.text = place.Detail;
 			raiting.text = place.Raiting.ToString();

@@ -6,6 +6,7 @@ public class PlaceUI : MonoBehaviour
 {
 	[Header("UI params")]
 	[SerializeField] private Image mainImage;
+	[SerializeField] private GameObject modelContainer;
 	[SerializeField] private TextMeshProUGUI title;
 	[SerializeField] private TextMeshProUGUI location;
 	[SerializeField] private TextMeshProUGUI raiting;
@@ -26,7 +27,6 @@ public class PlaceUI : MonoBehaviour
 		UpdateUI();
 		ExitButton.onClick.AddListener(() =>
 		{
-			//Hide();
 			Destroy(gameObject);
 		});
 	}
@@ -34,6 +34,15 @@ public class PlaceUI : MonoBehaviour
 	public void UpdateUI()
 	{
 		mainImage.sprite = place.MainImage;
+		if (place.Model != null)
+		{
+			Instantiate(place.Model, modelContainer.transform);
+		}
+		else
+		{
+			Destroy(modelContainer.gameObject);
+		}
+
 		title.text = place.Title;
 		location.text = place.Location;
 		raiting.text = place.Raiting.ToString();
