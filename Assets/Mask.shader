@@ -1,29 +1,27 @@
-Shader "Unlit/Portal 2.0"
+Shader "Stencil/Mask"
 {
     Properties
     {
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" "Queue" = "Geometry-1"}
+        Tags { "RenderType"="Opaque" "Queue"="Geometry-1" }
 
         Blend Zero One
-        ZWrite off
+        ZWrite Off
 
         Pass
         {
-
-            Stencil{
-            ref 1
-            comp always
-            Pass replace
+            Stencil
+            {
+                Ref 1
+                Comp Always
+                Pass replace
             }
 
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // make fog work
-            #pragma multi_compile_fog
 
             #include "UnityCG.cginc"
 
@@ -36,6 +34,9 @@ Shader "Unlit/Portal 2.0"
             {
                 float4 vertex : SV_POSITION;
             };
+
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
 
             v2f vert (appdata v)
             {

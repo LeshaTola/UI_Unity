@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bugatti
   m_EditorClassIdentifier: 
   mainImage: {fileID: 21300000, guid: 9c7b362f4449bcc4fa4058785f8732df, type: 3}
-  model: {fileID: 7675277403256720745, guid: 063cee56e5a28e24e8edad600a5f4024, type: 3}
+  model: {fileID: 3322521048318513328, guid: 6c5cee52638633c4abac06fcb2760e68, type: 3}
   title: Bugatti Chiron 2017
   location: Blue
   detail: 
