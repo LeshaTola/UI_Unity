@@ -11,17 +11,17 @@ public class JustImageTemplate : MonoBehaviour, ITemplateHolder
 
 	[SerializeField] private TextMeshProUGUI raiting;
 
-	[SerializeField] private PlaceSO place;
+	[SerializeField] private FullInfSO place;
 	[SerializeField] private Button openPlaceButton;
 
-	[SerializeField] private PlaceUI placeUITemplate;
+	[SerializeField] private FullInfUI placeUITemplate;
 
 	private void Awake()
 	{
 		openPlaceButton.onClick.AddListener(() =>
 		{
 			Canvas canvas = FindAnyObjectByType<Canvas>();
-			PlaceUI newUITemplate = Instantiate(placeUITemplate, canvas.transform);
+			FullInfUI newUITemplate = Instantiate(placeUITemplate, canvas.transform);
 			newUITemplate.SetPlaceSO(place);
 			newUITemplate.Show();
 		});
@@ -48,6 +48,6 @@ public class JustImageTemplate : MonoBehaviour, ITemplateHolder
 
 	public void SetTempate(ITemplate template)
 	{
-		place = template as PlaceSO;
+		place = template as FullInfSO;
 	}
 }

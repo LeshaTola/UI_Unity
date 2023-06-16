@@ -19,7 +19,7 @@ Shader "Stencil/Object"
         Stencil
         {
             Ref 0
-            Comp[_Comparer]
+            Comp [_Comparer]
         }
 
                 HLSLPROGRAM

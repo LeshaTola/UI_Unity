@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Sites/Place", fileName = "Place")]
-public class PlaceSO : ScriptableObject, ITemplate
+public class FullInfSO : ScriptableObject, ITemplate
 {
 	[Header("Image Params")]
 	[SerializeField] private Sprite mainImage;

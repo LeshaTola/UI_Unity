@@ -9,16 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f7a5cc097510f04ca5071f4e8ad4233, type: 3}
+  m_Script: {fileID: 11500000, guid: d25ec26541ee6a149bade3974e231f3c, type: 3}
   m_Name: Norway
   m_EditorClassIdentifier: 
   mainImage: {fileID: 21300000, guid: d848a78741420ea46ba367dd99cde792, type: 3}
+  model: {fileID: 0}
   title: Norwegian vilage
   location: Norwey
-  raiting: 4.7
-  cost: 300
-  additionalInformation: {fileID: 11400000, guid: 7c351f3931513ff45a00e1926b11b75f, type: 2}
   detail: 4 Bedrooms, Kitchen, 2 Bathroom and swimming pool
   description: 'Description: Cozy house on the edge of a Norwegian village with a
     beautiful view of the mountains'
-  imageTemplate: {fileID: 7844059623239288499, guid: 3f218af6a18140f4289cadc447221254, type: 3}
+  raiting: 4.7
+  cost: 300
+  additionalInformation: {fileID: 11400000, guid: 7c351f3931513ff45a00e1926b11b75f,
+    type: 2}

@@ -88,6 +88,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _ColorMask: 15
     - _Comparer: 2
     - _Cull: 2
     - _Cutoff: 0.5
@@ -110,9 +111,15 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
+    - _Stencil: 3
+    - _StencilComp: 3
+    - _StencilOp: 0
+    - _StencilReadMask: 0
     - _StencilType: 3
+    - _StencilWriteMask: 0
     - _Surface: 0
     - _UVSec: 0
+    - _UseUIAlphaClip: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:

@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlaceUI : MonoBehaviour
+public class FullInfUI : MonoBehaviour
 {
 	[Header("UI params")]
 	[SerializeField] private Image mainImage;
@@ -20,15 +20,21 @@ public class PlaceUI : MonoBehaviour
 	[SerializeField] private ManyImagesTemplate manyImagesTemplate;
 
 	[Header("Place")]
-	[SerializeField] private PlaceSO place;
+	[SerializeField] private FullInfSO place;
 
 	private void Awake()
 	{
-		UpdateUI();
+		MainSite mainScreen;
+		mainScreen = FindObjectOfType<MainSite>();
+		mainScreen.gameObject.SetActive(false);
+
 		ExitButton.onClick.AddListener(() =>
 		{
+			mainScreen.gameObject.SetActive(true);
 			Destroy(gameObject);
 		});
+
+		UpdateUI();
 	}
 
 	public void UpdateUI()
@@ -64,7 +70,7 @@ public class PlaceUI : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
-	public void SetPlaceSO(PlaceSO placeSO)
+	public void SetPlaceSO(FullInfSO placeSO)
 	{
 		place = placeSO;
 		UpdateUI();
